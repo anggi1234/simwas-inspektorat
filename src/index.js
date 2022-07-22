@@ -33,6 +33,7 @@ import PenegakanIntegritas from "views/PenegakanIntegritas";
 import LayananKonsultasi from "views/LayananKonsultasi";
 import LayananPengaduan from "views/LayananPengaduan";
 import LayananWBS from "views/LayananWBS";
+import LayananWBSform from "views/LayananWBSform";
 import LayananPermohonan from "views/LayananPermohonan";
 import Beranda from "views/Beranda";
 import TugasFungsi from "views/TugasFungsi";
@@ -95,6 +96,7 @@ ReactDOM.render(
       <Route path="/LayananKonsultasi" exact component={LayananKonsultasi} />
       <Route path="/LayananPengaduan" exact component={LayananPengaduan} />
       <Route path="/LayananWBS" exact component={LayananWBS} />
+      <Route path="/LayananWBSform" exact component={LayananWBSform} />
       <Route path="/LayananPermohonan" exact component={LayananPermohonan} />
       <Route path="/TugasFungsi" exact component={TugasFungsi} />
       <Route path="/StrukturOrganisasi" exact component={StrukturOrganisasi} />

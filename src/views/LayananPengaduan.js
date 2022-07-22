@@ -1,14 +1,81 @@
-import React from "react";
-//import { Link } from "react-router-dom";
-// import Axios from 'axios';
-
-// components
-
+import React, { useEffect, useState } from "react";
+import { Form, Button } from "semantic-ui-react";
+import axios from "axios";
+import "../App.css";
 import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
+import "semantic-ui-css/semantic.min.css";
+
+import { useHistory } from "react-router";
 // import { data } from "autoprefixer";
 
 export default function PelayananPublic() {
+  let history = useHistory();
+  const [nama, setNama] = useState("");
+  const [tgl, setEmail] = useState("");
+  const [umur, setUmur] = useState("");
+  const [ttl, setTtl] = useState("");
+  const [lahir, setLahir] = useState("");
+  const [kewarganegaraan, setKewarganegaraan] = useState("");
+  const [jenis_kelamin, setJk] = useState("");
+  const [agama, setAgama] = useState("");
+  const [pekerjaan, setPekerjaan] = useState("");
+  const [alamat, setAlamat] = useState("");
+  const [nomor_hp, setNohp] = useState("");
+  const [waktu_kejadian, setWaktu] = useState("");
+  const [tempat_kejadian, setTempat] = useState("");
+  const [apa_yang_terjadi, setTerjadi] = useState("");
+  const [siapa_yang_menjadi_korban, setKorban] = useState("");
+  const [siapa_yang_terlapor, setTerlapor] = useState("");
+  const [kronologis_kejadian, setKronologi] = useState("");
+  const [bukti_yang_diserahkan, setBukti] = useState("");
+  const [upload_bukti, setUploadBukti] = useState("");
+  const [penerima_laporan, setPenerima] = useState("");
+  const [nomor_lhp, setNoLhp] = useState("");
+  const [jenis_rekomendasi, setRekomendasi] = useState("");
+  const [keterangan, setKeterangan] = useState("");
+
+  const [showAlert, setShowAlert] = React.useState(true);
+
+  useEffect(() => {
+    setShowAlert(false);
+  }, [0]);
+
+  const sendDataToAPI = () => {
+    axios
+      .post(
+        `https://simwas.inspektorat.banjarkota.go.id/inspektorat_api/api/list/t_pengaduan`,
+        {
+          nama,
+          tgl,
+          umur,
+          ttl,
+          lahir,
+          kewarganegaraan,
+          jenis_kelamin,
+          agama,
+          pekerjaan,
+          alamat,
+          nomor_hp,
+          waktu_kejadian,
+          tempat_kejadian,
+          apa_yang_terjadi,
+          siapa_yang_menjadi_korban,
+          siapa_yang_terlapor,
+          kronologis_kejadian,
+          bukti_yang_diserahkan,
+          upload_bukti,
+          penerima_laporan,
+          nomor_lhp,
+          jenis_rekomendasi,
+          keterangan,
+        }
+      )
+      .then(() => {
+        history.push("/LayananKonsultasi");
+        setShowAlert(true);
+      });
+  };
   return (
     <>
       <Navbar transparent />

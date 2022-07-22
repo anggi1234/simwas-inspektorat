@@ -148,20 +148,6 @@ export default function PelayananPublic() {
                       />
                     </div>
 
-                    {/* <div className="relative w-full mb-3">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="message"
-                      >
-                        Pangkat Golongan
-                      </label>
-                      <input
-                        type="text"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="Pangkat Golongan"
-                      />
-                    </div> */}
-
                     <div className="relative w-full mb-3">
                       <label
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -176,11 +162,28 @@ export default function PelayananPublic() {
                         <option disabled selected hidden>
                           Pangkat Golongan
                         </option>
-                        <option value="1">Pembina Utama Madya/IV.e</option>
-                        <option value="2">Pembina Utama/IV.d</option>
-                        <option value="3">Pembina Utama Muda/IV.c</option>
-                        <option value="4">Pembina Tk.I/IV.b</option>
-                        <option value="5">Pembina/IV.a</option>
+                        <option value="1">non-PNS</option>
+                        <option value="1a">Juru Muda / I A</option>
+                        <option value="1b">Juru Muda Tingkat 1 / I B</option>
+                        <option value="1c">Juru / I C</option>
+                        <option value="1d">Juru Tingkat 1 / I D</option>
+                        <option value="2a">Pengatur Muda / II A</option>
+                        <option value="2b">
+                          Pengatur Muda Tingkat 1 / II B
+                        </option>
+                        <option value="2c">Pengatur / II C</option>
+                        <option value="2d">Pengatur Tingkat 1 / II D</option>
+                        <option value="3a">Penata Muda / III A</option>
+                        <option value="3b">
+                          Penata Muda Tingkat 1 / III B
+                        </option>
+                        <option value="3c">Penata / III C</option>
+                        <option value="3d">Penata Tingkat 1 / III D</option>
+                        <option value="4a">Pembina / IV A</option>
+                        <option value="4b">Pembina Tingkat 1 / IV B</option>
+                        <option value="4c">Pembina Utama Muda / IV C</option>
+                        <option value="4d">Pembina Utama Madya / IV D</option>
+                        <option value="4e">Pembina Utama / IV E</option>
                       </select>
                     </div>
 

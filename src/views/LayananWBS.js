@@ -6,6 +6,7 @@ import React from "react";
 
 import Navbar from "components/Navbars/AuthNavbar.js";
 import Footer from "components/Footers/Footer.js";
+import { Router } from "react-router";
 // import { data } from "autoprefixer";
 
 export default function PelayananPublic() {
@@ -89,146 +90,23 @@ export default function PelayananPublic() {
                       <p className="leading-relaxed mt-1 mb-4 text-blueGray-500">
                         Whistleblowing System
                       </p>
+                      <p className="leading-relaxed mt-1 mb-4 text-blueGray-500">
+                        DEFINISI WHISTLEBLOWING SYSTEM adalah mekanisme
+                        penyampaian pengaduan dugaan tindak pidana tertentu yang
+                        telah terjadi atau akan terjadi yang melibatkan pegawai
+                        dan orang lain yang yang dilakukan dalam organisasi
+                        tempatnya bekerja, dimana pelapor bukan merupakan bagian
+                        dari pelaku kejahatan yang dilaporkannya.
+                      </p>
                     </center>
-                    <div className="relative w-full mb-3 mt-8">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="full-name"
-                      >
-                        NIP Pelapor
-                      </label>
-                      <input
-                        type="text"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="NIK Pelapor"
-                      />
-                    </div>
-                    <div className="relative w-full mb-3">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="email"
-                      >
-                        Nama Pelapor
-                      </label>
-                      <input
-                        type="nama"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="Nama Pelapor"
-                      />
-                    </div>
-
-                    <div className="relative w-full mb-3">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="email"
-                      >
-                        Email Pelapor
-                      </label>
-                      <input
-                        type="email"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="Email Pelapor"
-                      />
-                    </div>
-
-                    <div className="relative w-full mb-3">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="email"
-                      >
-                        Nama & Jabatan Pihak yang Dilaporkan
-                      </label>
-                      <input
-                        type="email"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="Nama & Jabatan Pihak yang Dilaporkan"
-                      />
-                    </div>
-
-                    <div className="relative w-full mb-3">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="email"
-                      >
-                        Unit Kerja Lokasi Terlapor
-                      </label>
-                      <input
-                        type="email"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="Unit Kerja Lokasi Terlapor"
-                      />
-                    </div>
-
-                    <div className="relative w-full mb-3 mt-8">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="full-name"
-                      >
-                        Waktu Kejadian
-                      </label>
-                      <input
-                        type="date"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="Waktu Kejadian"
-                      />
-                    </div>
-
-                    <div className="relative w-full mb-3 mt-8">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="full-name"
-                      >
-                        Kategori
-                      </label>
-                      <select
-                        id="golongan"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      >
-                        <option disabled selected hidden>
-                          Kategori
-                        </option>
-                        <option value="1">
-                          Korupsi, kolusi, dan nepotisme
-                        </option>
-                        <option value="2">Penyalahgunaan Wewenang</option>
-                        <option value="3">Kecurangan (Fraud)</option>
-                        <option value="4">
-                          Perbuatan melanggar hukum dan peraturan internal
-                        </option>
-                        <option value="5">Penggelapan aset</option>
-                        <option value="6">Kepegawaian</option>
-                        <option value="7">Benturan Kepentingan</option>
-                        <option value="8">Lainnya</option>
-                      </select>
-                      {/* <input
-                        type="text"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="Kategori"
-                      /> */}
-                    </div>
-
-                    <div className="relative w-full mb-3">
-                      <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        htmlFor="message"
-                      >
-                        Rincian Aduan
-                      </label>
-                      <textarea
-                        rows="4"
-                        cols="80"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                        placeholder="Rincian Aduan"
-                      />
-                    </div>
-
                     <div className="text-center mt-6">
-                      <button
-                        className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      <a
+                        href="./LayananWBSform"
+                        className="w-full md:w-4/12 px-2 mr-auto ml-auto"
                         type="button"
                       >
-                        Kirim Pesan
-                      </button>
+                        Kirim Laporan
+                      </a>
                     </div>
                   </div>
                 </div>

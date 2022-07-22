@@ -11,10 +11,14 @@ import { useHistory } from "react-router";
 
 export default function LKform() {
   let history = useHistory();
-  const [nik, setNik] = useState("");
+  // const [tahun, setTahun] = useState("");
+  const [tanggal, setTanggal] = useState("");
   const [nama, setNama] = useState("");
-  const [email, setEmail] = useState("");
-  const [pesan, setPesan] = useState("");
+  const [alamat, setAlamat] = useState("");
+  const [jabatan, setJabatan] = useState("");
+  const [konsultasi, setKonsultasi] = useState("");
+  const [uraian_masalah, setUraian] = useState("");
+  const [rekomendasi, setRekomendasi] = useState("");
   const [showAlert, setShowAlert] = React.useState(true);
 
   useEffect(() => {
@@ -24,12 +28,19 @@ export default function LKform() {
   const sendDataToAPI = () => {
     axios
       .post(
-        `https://simwas.inspektorat.banjarkota.go.id/inspektorat_api/api/add/tf_layanan_konsultasi`,
+        `https://simwas.inspektorat.banjarkota.go.id/inspektorat_api/api/add/t_laporan_konsultasi`,
         {
-          nik,
+          // tahun,
+          tanggal,
           nama,
-          email,
-          pesan,
+          alamat,
+          jabatan,
+          konsultasi,
+          uraian_masalah,
+          rekomendasi,
+          // penerima_konsultasi,
+          // dokumen,
+          // wilayah,
         }
       )
       .then(() => {
@@ -140,12 +151,13 @@ export default function LKform() {
                         <div className="relative w-full mb-3">
                           <label
                             className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                            htmlFor="email"
+                            htmlFor="nama"
                           >
                             Nama Lengkap
                           </label>
                           <input
                             type="nama"
+                            required
                             className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             placeholder="Nama Lengkap"
                             name="nama"
@@ -156,30 +168,33 @@ export default function LKform() {
                         <div className="relative w-full mb-3">
                           <label
                             className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                            htmlFor="email"
-                          >
-                            Email
-                          </label>
-                          <input
-                            type="email"
-                            className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                            placeholder="Email"
-                            name="email"
-                            onChange={(e) => setEmail(e.target.value)}
-                          />
-                        </div>
-
-                        <div className="relative w-full mb-3">
-                          <label
-                            className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                            htmlFor="email"
+                            htmlFor="alamat"
                           >
                             Alamat
                           </label>
                           <input
-                            type="email"
+                            type="alamat"
+                            required
                             className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             placeholder="Alamat"
+                            name="alamat"
+                            onChange={(e) => setAlamat(e.target.value)}
+                          />
+                        </div>
+
+                        <div className="relative w-full mb-3">
+                          <label
+                            className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                            htmlFor="jabatan"
+                          >
+                            Jabatan
+                          </label>
+                          <input
+                            type="jabatan"
+                            className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            placeholder="Jabatan"
+                            name="konsultasi"
+                            onChange={(e) => setJabatan(e.target.value)}
                           />
                         </div>
 
@@ -188,12 +203,15 @@ export default function LKform() {
                             className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                             htmlFor="email"
                           >
-                            No HP
+                            Konsultasi
                           </label>
                           <input
-                            type="email"
+                            type="konsultasi"
+                            required
                             className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                            placeholder="No HP"
+                            placeholder="Konsultasi"
+                            name="konsultasi"
+                            onChange={(e) => setKonsultasi(e.target.value)}
                           />
                         </div>
 
@@ -202,17 +220,51 @@ export default function LKform() {
                             className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                             htmlFor="message"
                           >
-                            Hal yang dikonsultasikan
+                            Uraian Masalah
                           </label>
                           <textarea
                             rows="4"
                             cols="80"
                             className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                            placeholder="Hal yang dikonsultasikan ..."
-                            name="pesan"
-                            onChange={(e) => setPesan(e.target.value)}
+                            placeholder="Uraian masalah..."
+                            name="uraian"
+                            onChange={(e) => setUraian(e.target.value)}
                           />
                         </div>
+
+                        <div className="relative w-full mb-3">
+                          <label
+                            className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                            htmlFor="message"
+                          >
+                            Rekomendasi
+                          </label>
+                          <textarea
+                            rows="4"
+                            cols="80"
+                            className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                            placeholder="Rekomendasi.."
+                            name="uraian"
+                            onChange={(e) => setRekomendasi(e.target.value)}
+                          />
+                        </div>
+
+                        <div className="relative w-full mb-3 mt-8">
+                          <label
+                            className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                            htmlFor="full-name"
+                          >
+                            Tanggal
+                          </label>
+                          <input
+                            type="date"
+                            className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                            placeholder="Tanggal"
+                            name="tanggal"
+                            onChange={(e) => setTanggal(e.target.value)}
+                          />
+                        </div>
+
                         <div className="text-center mt-6">
                           <button
                             className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"

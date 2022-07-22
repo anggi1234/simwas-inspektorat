@@ -102,7 +102,7 @@ export default function Informasi() {
                   </div>
                 </div>
 
-                <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
+                <div className="mt-10 py-10 border-t border-blueGray-200 text-justify">
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <p className="mb-4 text-lg leading-relaxed text-blueGray-700">

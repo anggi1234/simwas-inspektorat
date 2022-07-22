@@ -44,7 +44,7 @@ export default function PelayananPublic() {
   const sendDataToAPI = () => {
     axios
       .post(
-        `https://simwas.inspektorat.banjarkota.go.id/inspektorat_api/api/list/t_pengaduan`,
+        `https://simwas.inspektorat.banjarkota.go.id/inspektorat_api/api/add/t_pengaduan`,
         {
           nama,
           tgl,
@@ -286,7 +286,9 @@ export default function PelayananPublic() {
                       <input
                         type="date"
                         className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="Pekerjaan"
+                        placeholder="Waktu Kejadian"
+                        name="waktu"
+                        onChange={(e) => setWaktu(e.target.value)}
                       />
                     </div>
 
@@ -382,7 +384,8 @@ export default function PelayananPublic() {
                     <div className="text-center mt-6">
                       <button
                         className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button"
+                        type="submit"
+                        onClick={sendDataToAPI}
                       >
                         Kirim Pesan
                       </button>
